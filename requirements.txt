@@ -2,17 +2,27 @@
 # Python 3.8 or higher required
 # Install with: pip install -r requirements.txt
 
-# Required packages
+# Core dependencies
 fastapi>=0.104.0
 uvicorn[standard]>=0.24.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
 
-# Optional packages for enhanced functionality
-# Uncomment to use:
+# HTTP client for API testing
+httpx>=0.24.0
+requests>=2.31.0
 
-# scapy>=2.5.0  # Advanced packet manipulation and crafting
-# nmap>=0.0.1  # Python interface to nmap
-# colorama>=0.4.6  # Colored terminal output
-# tqdm>=4.65.0  # Progress bars
+# Enhanced functionality libraries
+scapy>=2.5.0
+colorama>=0.4.6
+tqdm>=4.65.0
+
+# Development and testing tools
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Additional utilities
+python-dotenv>=1.0.0
 
 # Notes on built-in libraries (no installation needed):
 # - socket: Network communication
@@ -20,3 +30,5 @@ uvicorn[standard]>=0.24.0
 # - queue: Task queue management
 # - argparse: Command-line argument parsing
 # - asyncio: Asynchronous I/O operations
+# - concurrent.futures: Thread pool management
+# - typing: Type hints
