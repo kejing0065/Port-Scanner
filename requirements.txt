@@ -1,0 +1,22 @@
+# Port Scanner - Python Dependencies
+# Python 3.8 or higher required
+# Install with: pip install -r requirements.txt
+
+# Required packages
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Optional packages for enhanced functionality
+# Uncomment to use:
+
+# scapy>=2.5.0  # Advanced packet manipulation and crafting
+# nmap>=0.0.1  # Python interface to nmap
+# colorama>=0.4.6  # Colored terminal output
+# tqdm>=4.65.0  # Progress bars
+
+# Notes on built-in libraries (no installation needed):
+# - socket: Network communication
+# - threading: Concurrent port scanning
+# - queue: Task queue management
+# - argparse: Command-line argument parsing
+# - asyncio: Asynchronous I/O operations
