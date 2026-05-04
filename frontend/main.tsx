@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { useScanner } from './logic';
+// @ts-ignore
+import './src/Scanner.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
@@ -22,8 +24,8 @@ function Scanner() {
     for (let i = 0; i < result.length; i++){
         const port = result[i];
         displayList.push(
-            <div key={port} style={{ color: 'green', fontWeight: 'bold' }}>
-                POrt { port } is open.
+            <div key={port} className="port-item">
+                Port { port } is open.
             </div>
         );
     }
@@ -40,14 +42,14 @@ function Scanner() {
 
 
     return (
-        <div>
-            <h1>Port Scanner</h1>
-            <p>This is a port scanner tools. Please do not use it as illegal activities.</p>
+        <div className="scanner-container">
+            <h1 className="title">Port Scanner</h1>
+            <p className="description">This is a port scanner tools. Please do not use it as illegal activities.</p>
 
-            <div>
-                <input id="ip" placeholder="Enter IP address"/>
-                <input id="start_port" placeholder="Start Port" type="number"/>
-                <input id="end_port" placeholder="End Port" type="number"/>
+            <div className="input-container">
+                <input id="ip" className="input-field" placeholder="Enter IP address"/>
+                <input id="start_port" className="input-field" placeholder="Start Port" type="number"/>
+                <input id="end_port" className="input-field" placeholder="End Port" type="number"/>
             </div>
             
 
@@ -56,6 +58,7 @@ function Scanner() {
             </button> */}
 
             <button
+                className="scan-button"
                 onClick={() => {
                     const target = (document.getElementById('ip') as HTMLInputElement)?.value;
                     const start_port = (document.getElementById('start_port') as HTMLInputElement)?.valueAsNumber;
@@ -71,9 +74,14 @@ function Scanner() {
                 { buttonText() }
             </button>
 
-            <h3>Port Scan Results</h3>
+            <div className="results-section">
+                <h3>Port Scan Results</h3>
 
-            {empty || <div>{displayList}</div>}
+                <div className="results-container">
+                    {empty || <div className="result-container">{displayList}</div>}
+                </div>
+            </div>
+                
         </div>
     );
 }
